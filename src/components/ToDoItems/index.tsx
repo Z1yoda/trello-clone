@@ -4,7 +4,7 @@ import { SyntheticEvent, useEffect, useState } from "react";
 import ToDoItemType from "../../types";
 import getData from "../../utilities/functions";
 import CreateToDo from "../CreateToDo";
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable , DropResult} from 'react-beautiful-dnd';
 
 interface StatusPropsType {
     status: string | null;
@@ -43,7 +43,7 @@ const ToDoItems = ({ status }: StatusPropsType) => {
         setEdited("");
     };
 
-    const onDragEnd = (result) => {
+    const onDragEnd = (result: DropResult) => {
      console.log(result);
      
     const { destination, source, draggableId } = result;
