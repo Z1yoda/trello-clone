@@ -1,0 +1,14 @@
+.trelloHeader {
+  background-image: url(https://trello.com/assets/d947df93bc055849898e.gif);
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  position: absolute;
+  top: 12px;
+  width: 75px;
+  height: 40px;
+  margin-left: 12px;
+  color: rgb(87, 157, 255);
+}

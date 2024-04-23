@@ -1,0 +1,171 @@
+.card-wrapper {
+  padding: 8px;
+  width: 272px;
+  border-radius: 12px;
+  background-color: rgb(16, 18, 4);
+}
+
+.menu-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-title h2 {
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  width: 204px;
+  height: 20px;
+}
+
+.menu-title img {
+  /* display: block;
+  width: 16px; */
+  height: 16px;
+  cursor: pointer;
+}
+
+.menuImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16px;
+  width: 16px;
+  padding: 16px 16px;
+  border-radius: 8px;
+}
+
+.menuImg:hover,
+.createTem:hover {
+  background-color: #a6c5e229;
+}
+
+.todos-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+  gap: 8px;
+}
+
+.todo-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 256px;
+  border-radius: 8px;
+  padding: 8px 12px 4px 12px;
+  background-color: rgb(34, 39, 43);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.todo-wrapper:hover {
+  border-radius: 12px;
+  border: 2px solid #6b90bf;
+}
+
+.editBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.editBtn::before:hover {
+  background-color: #282e33;
+}
+
+.todo-wrapper p {
+  line-height: 20px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.ToDoInput {
+  display: block;
+  line-height: 20px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  background-color: rgb(34, 39, 43);
+}
+
+.addToCard-wrap {
+  display: flex;
+  justify-content: space-between;
+  /* padding: px 8px 0 8px; */
+  background-color: transparent;
+}
+
+.plus-add p {
+  font-size: 14px;
+  height: 23px;
+  margin-bottom: 0;
+}
+
+.plus-add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 0 12px 0 8px;
+  width: 210px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.plus-add:hover {
+  background-color: #282f27;
+}
+
+.createTem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16px;
+  width: 16px;
+  padding: 16px 16px;
+  border-radius: 8px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.titleInput {
+  display: block;
+  margin-top: -1px;
+  width: 204px;
+  height: 20px;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.inputH2 {
+  width: 224px;
+  height: 32px;
+  padding: 6px 8px 6px 12px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+
+.inputH2:focus {
+  background-color: #22272b;
+  border: 2px solid rgb(182, 194, 207);
+}
+
+.overText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
