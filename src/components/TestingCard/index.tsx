@@ -2,6 +2,7 @@ import './index.css'
 import menu from '../../assets/images/menu.svg'
 import {  useState } from 'react'
 import ToDoItems from '../ToDoItems'
+import { Droppable } from 'react-beautiful-dnd'
 
 const TestingCard = () => {
   const [isInput, setIsInput] = useState<boolean>(false)
@@ -44,7 +45,13 @@ const TestingCard = () => {
         <div className='menuImg'><img src={menu} alt="" /></div>
       </div>
       <div >
-         <ToDoItems status={title}></ToDoItems> 
+         <Droppable droppableId={status || 'default'}>
+          {(provided) => (
+            <div ref={provided.innerRef} {...provided.droppableProps}>
+              <ToDoItems status={title}></ToDoItems>
+            </div>
+          )}
+        </Droppable>
       </div>
     </div>
   )

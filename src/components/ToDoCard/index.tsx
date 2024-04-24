@@ -2,6 +2,7 @@ import './index.css'
 import menu from '../../assets/images/menu.svg'
 import {  useState } from 'react'
 import ToDoItems from '../ToDoItems'
+import { Droppable } from 'react-beautiful-dnd'
 
 
 const ToDoCard = () => {
@@ -11,13 +12,13 @@ const ToDoCard = () => {
   
   const handleClick = () => {
     if (isInput) {
-    setIsInput(false)
+      setIsInput(false)
     } else {
       setIsInput(true)
     }
   }
   
-  
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
    setTitle(e.target.value);
@@ -45,7 +46,14 @@ const ToDoCard = () => {
         <div className='menuImg'><img src={menu} alt="" /></div>
       </div>
       <div >
-         <ToDoItems status={title}></ToDoItems> 
+        <Droppable droppableId={status || 'default'}>
+          {(provided) => (
+            <div ref={provided.innerRef} {...provided.droppableProps}>
+              <ToDoItems status={title}></ToDoItems>
+            </div>
+          )}
+        </Droppable>
+         
       </div>
     </div>
   )

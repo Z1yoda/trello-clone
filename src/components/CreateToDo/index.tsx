@@ -1,9 +1,9 @@
 import "./index.css";
 import createTem from "../../assets/images/createTem.svg";
-import getData from "../../utilities/functions";
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState , useEffect} from "react";
 import plus from "../../assets/images/plus.svg";
 import exit from "../../assets/images/exit.svg";
+import ToDoItemType from "../../types";
 
 interface ChildPropsType{
     status : string | null
@@ -12,6 +12,12 @@ interface ChildPropsType{
 const CreateToDo = ({status}: ChildPropsType) => {
   const [isAdding, setIsAdding] = useState<boolean>(false);
   const [todoName, setTodoName] = useState<string>("")
+ const [data, setdata] = useState<ToDoItemType[]>([])
+
+useEffect(() => {
+setdata(JSON.parse(localStorage.getItem('todos') || ''))
+    }, []); 
+
 
   const handleAddToDo = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -21,11 +27,11 @@ const CreateToDo = ({status}: ChildPropsType) => {
         name: todoName,
         status: `${status}`,
           id: Date.now(),
-          };
-          
-      let todos = getData();
-      todos.push(todo);
-          localStorage.setItem("todos", JSON.stringify(todos));
+        };
+        
+        
+      data.push(todo);
+          localStorage.setItem("todos", JSON.stringify(data));
           setIsAdding(false)
     }
   };
